@@ -7731,11 +7731,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e000b
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v1
+    const v1, 0x0
 
     iput v1, p0, Lcom/sec/android/app/camera/Camera;->mLowBatteryWarningLevel:I
 
