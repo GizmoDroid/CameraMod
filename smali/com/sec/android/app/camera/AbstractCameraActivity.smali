@@ -1006,67 +1006,13 @@
 .end method
 
 .method public IsCalling()Z
-    .locals 4
+    .locals 1
 
     .prologue
     .line 628
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-
-    .line 630
-    :try_start_0
-    const-string v2, "phone"
-
-    invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/internal/telephony/ITelephony$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
-
-    move-result-object v1
-
-    .line 631
-    .local v1, phoneServ:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v1, :cond_0
-
-    .line 632
-    invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-
-    .line 633
-    iget-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 638
-    .end local v1           #phoneServ:Lcom/android/internal/telephony/ITelephony;
-    :goto_0
-    return v2
-
-    .line 635
-    :catch_0
-    move-exception v2
-
-    move-object v0, v2
-
-    .line 636
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v2, "AbstractCameraActivity"
-
-    const-string v3, "phone.isOffhook() failed"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 638
-    .end local v0           #e:Landroid/os/RemoteException;
-    :cond_0
-    const/4 v2, 0x1
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public OpenHardwareFailed()V
@@ -1177,70 +1123,13 @@
 .end method
 
 .method public checkCameraStartCondition_Call()Z
-    .locals 4
+    .locals 1
 
     .prologue
     .line 613
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-
-    .line 615
-    :try_start_0
-    const-string v2, "phone"
-
-    invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/internal/telephony/ITelephony$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
-
-    move-result-object v1
-
-    .line 616
-    .local v1, phoneServ:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v1, :cond_0
-
-    .line 617
-    invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->isOffhook()Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-
-    .line 618
-    invoke-virtual {p0}, Lcom/sec/android/app/camera/AbstractCameraActivity;->CannotStartCamera()V
-
-    .line 619
-    iget-boolean v2, p0, Lcom/sec/android/app/camera/AbstractCameraActivity;->mCheckCalling:Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 624
-    .end local v1           #phoneServ:Lcom/android/internal/telephony/ITelephony;
-    :goto_0
-    return v2
-
-    .line 621
-    :catch_0
-    move-exception v2
-
-    move-object v0, v2
-
-    .line 622
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v2, "AbstractCameraActivity"
-
-    const-string v3, "phone.isOffhook() failed"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 624
-    .end local v0           #e:Landroid/os/RemoteException;
-    :cond_0
-    const/4 v2, 0x1
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public checkStorage(ZZ)V
